@@ -16,6 +16,7 @@ mkdir -p $HOME/bin
 
 echo " - kubectl"
 curl -L -o $HOME/bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
+chmod +x $HOME/bin/kubectl
 
 echo " - kubectx and kubens"
 curl -L -o /tmp/go-kubectx.tar.gz https://github.com/aca/go-kubectx/releases/download/v0.1.0/go-kubectx_0.1.0_Darwin_x86_64.tar.gz
