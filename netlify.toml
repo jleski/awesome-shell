@@ -1,0 +1,2 @@
+[redirects.headers]
+ Content-Type = "application/x-download"
