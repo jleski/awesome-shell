@@ -6,10 +6,10 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 echo "Fetching dotfiles..."
 
 echo " - zshrc"
-curl -L -o $HOME/.zshrc https://raw.githubusercontent.com/jleski/awesome-shell/dotfiles/zshrc
+curl -L -o $HOME/.zshrc https://raw.githubusercontent.com/jleski/awesome-shell/main/dotfiles/zshrc
 
 echo " - alacritty"
-curl -L -o $HOME/.alacritty.yml https://raw.githubusercontent.com/jleski/awesome-shell/dotfiles/alacritty.yml
+curl -L -o $HOME/.alacritty.yml https://raw.githubusercontent.com/jleski/awesome-shell/main/dotfiles/alacritty.yml
 
 echo "Downloading cli binaries to $HOME/bin..."
 mkdir -p $HOME/bin
