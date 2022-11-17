@@ -41,7 +41,7 @@ if [ "${OS}" != "" ]; then
         curl -L "https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubectx_v0.9.4_linux_x86_64.tar.gz" | tar -xz -C $HOME/bin kubectx
         curl -L "https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubens_v0.9.4_linux_x86_64.tar.gz" | tar -xz -C $HOME/bin kubens
         curl -L -o "/tmp/terraform.zip" "https://releases.hashicorp.com/terraform/1.3.4/terraform_1.3.4_linux_amd64.zip" && unzip /tmp/terraform.zip -d $HOME/bin
-        curl -L "https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd-0.23.1-aarch64-unknown-linux-gnu.tar.gz" | tar -xz --wildcards --strip-components 1 -C $HOME/bin "*/lsd"
+        curl -L "https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd-0.23.1-x86_64-unknown-linux-gnu.tar.gz" | tar -xz --wildcards --strip-components 1 -C $HOME/bin "*/lsd"
         curl -L "https://get.helm.sh/helm-v3.10.2-linux-amd64.tar.gz" | tar -xz --wildcards --strip-components 1 -C $HOME/bin "*/helm"
     fi
     test -f $HOME/bin/kubectl && chmod +x $HOME/bin/kubectl
