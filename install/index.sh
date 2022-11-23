@@ -50,6 +50,7 @@ if [ "${OS}" != "" ]; then
     test -f $HOME/bin/kubectx && chmod +x $HOME/bin/kubectx
     test -f $HOME/bin/kubens && chmod +x $HOME/bin/kubens
     test -f $HOME/bin/lsd && chmod +x $HOME/bin/lsd
+    test -f $HOME/bin/kubecm && chmod +x $HOME/bin/kubecm
 fi
 
 echo "Done."
