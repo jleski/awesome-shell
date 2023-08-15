@@ -29,8 +29,10 @@ if [ "${OS}" != "" ]; then
         BREW=$(which brew || "")
         if [ "${BREW}" != "" ]; then
             echo "Using homebrew..."
-            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf alacritty rust golang gpg2 gsed
+            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf alacritty rust golang gpg2 gsed az bicep
             ${BREW} install --cask visual-studio-code
+            ${BREW} tap azure/bicep
+            ${BREW} install bicep
         else
             echo "Downloading cli binaries to $HOME/bin..."
             curl -L -o $HOME/bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
