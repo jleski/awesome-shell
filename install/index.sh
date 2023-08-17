@@ -52,8 +52,6 @@ if [ "${OS}" != "" ]; then
         if [ "${BREW}" != "" ]; then
             echo "Using homebrew..."
             ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf rust golang gpg2 gsed az
-            ${BREW} tap azure/bicep
-            ${BREW} install bicep
         else
             curl -L -o $HOME/bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
             curl -L "https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubectx_v0.9.4_linux_x86_64.tar.gz" | tar -xz -C $HOME/bin kubectx
