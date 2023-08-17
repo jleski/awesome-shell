@@ -51,7 +51,7 @@ if [ "${OS}" != "" ]; then
         BREW=$(which brew)
         if [ "${BREW}" != "" ]; then
             echo "Using homebrew..."
-            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf rust golang gpg2 gsed az bicep
+            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf rust golang gpg2 gsed az
             ${BREW} tap azure/bicep
             ${BREW} install bicep
         else
