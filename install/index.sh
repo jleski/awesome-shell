@@ -18,7 +18,7 @@ if [ "${OS}" != "" ]; then
         BREW=$(which brew)
         if [ "${BREW}" != "" ]; then
             echo "Using homebrew..."
-            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf alacritty rust golang gpg2 gsed az bicep openlens zsh
+            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf alacritty rust golang gpg2 gsed az bicep openlens zsh ansible
             ${BREW} install --cask visual-studio-code
             ${BREW} tap azure/bicep
             ${BREW} install bicep
@@ -40,7 +40,7 @@ if [ "${OS}" != "" ]; then
         BREW=$(which brew)
         if [ "${BREW}" != "" ]; then
             echo "Using homebrew..."
-            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf rust golang gpg2 gsed az zsh
+            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf rust golang gpg2 gsed az zsh ansible
         else
             curl -L -o $HOME/bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
             curl -L "https://github.com/ahmetb/kubectx/releases/download/v0.9.4/kubectx_v0.9.4_linux_x86_64.tar.gz" | tar -xz -C $HOME/bin kubectx
