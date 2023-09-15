@@ -18,7 +18,7 @@ if [ "${OS}" != "" ]; then
         BREW=$(which brew)
         if [ "${BREW}" != "" ]; then
             echo "Using homebrew..."
-            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf alacritty rust golang gpg2 gsed az bicep openlens zsh ansible
+            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf alacritty rust golang gpg2 gsed az bicep openlens zsh ansible just go-task
             ${BREW} install --cask visual-studio-code
             ${BREW} tap azure/bicep
             ${BREW} install bicep
@@ -42,7 +42,7 @@ if [ "${OS}" != "" ]; then
         BREW=$(which brew)
         if [ "${BREW}" != "" ]; then
             echo "Using homebrew..."
-            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf rust golang gpg2 gsed az zsh ansible
+            ${BREW} install kubectl kubectx terraform lsd helm kubecm fzf rust golang gpg2 gsed az zsh ansible just go-task
             ${BREW} install --cask powershell
             pwsh -Command "Install-Module -Name Az -Repository PSGallery -Force"
         else
