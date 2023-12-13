@@ -50,6 +50,7 @@ if [ "${OS}" != "" ]; then
 
         if [ "${BREW}" != "" ]; then
             echo "Using homebrew to install apps..."
+            ${BREW} analytics off
             ${BREW} install git kubectl kubectx terraform lsd helm kubecm fzf alacritty gpg2 gsed az openlens zsh ansible just go-task direnv
             ${BREW} install cloudflare/cloudflare/cloudflared
             ${BREW} install --cask visual-studio-code
