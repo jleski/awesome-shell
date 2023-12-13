@@ -6,7 +6,7 @@ window:
 
 font:
   normal:
-    family: FantasqueSansMono Nerd Font
+    family: FantasqueSansM Nerd Font
     style: Regular
 
   size: 16
@@ -39,4 +39,3 @@ colors:
 key_bindings:
  - { key: Right, mods: Alt, chars: "\x1BF" }
  - { key: Left,  mods: Alt, chars: "\x1BB" }
-alt_send_esc: false
