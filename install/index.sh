@@ -115,6 +115,6 @@ echo " - alacritty"
 curl -L -o $HOME/.alacritty.yml https://sh.jles.work/dotfiles/alacritty.yml
 
 echo "Configuring Starship preset..."
-$HOME/.cargo/bin/starship preset tokyo-night -o ~/.config/starship.toml
+$HOME/.cargo/bin/starship preset pastel-powerline -o ~/.config/starship.toml
 
 echo "Done."
