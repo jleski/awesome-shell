@@ -44,6 +44,10 @@ if [ "${OS}" != "" ]; then
         echo "Installing Go ${GO_VERSION} ..."
         curl -L -o "/tmp/go${GO_VERSION}.darwin-amd64.pkg" "https://go.dev/dl/go${GO_VERSION}.darwin-amd64.pkg" && sudo installer -pkg "/tmp/go${GO_VERSION}.darwin-amd64.pkg" -target /
 
+        NODE_VERSION="20.10.0"
+        echo "Installing Node ${NODE_VERSION} ..."
+        curl -L -o "/tmp/node-v${NODE_VERSION}.pkg" "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.pkg" && sudo installer -pkg "/tmp/node-v${NODE_VERSION}.pkg" -target /
+
         GOOGLE_CLOUD_SDK_VERSION="457.0.0"
         echo "Installing Google Cloud SDK ${GOOGLE_CLOUD_SDK_VERSION} ..."
         curl -L "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-${GOOGLE_CLOUD_SDK_VERSION}-darwin-x86_64.tar.gz" | tar -xz -C $HOME
