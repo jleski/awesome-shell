@@ -7,6 +7,13 @@ My Awesome Shell setup
 
 Use this one-liner to install:
 
+**Linux, MacOS**
 ```bash
 /bin/bash -c "$(curl -fsSL https://sh.jles.work)"
+```
+
+**Windows**
+```PowerShell
+iex ((New-Object System.Net.WebClient).DownloadString('https://sh.jles.work/install.ps1'))
+
 ```
