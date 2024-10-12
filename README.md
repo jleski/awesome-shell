@@ -26,8 +26,7 @@ sudo /bin/bash -c "$(curl -fsSL https://sh.jles.work)"
 For minimal install:
 ```bash
 # wget
-wget -O - https://sh.jles.work | MINIMAL_INSTALL=true sudo bash
-
+wget -O - https://sh.jles.work | sudo MINIMAL_INSTALL=true bash
 # curl
 MINIMAL_INSTALL=true /bin/bash -c "$(curl -fsSL https://sh.jles.work)"
 ```
