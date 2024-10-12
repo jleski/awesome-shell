@@ -29,15 +29,15 @@ install_prerequisites() {
         if ! command -v brew &> /dev/null; then
             install_homebrew
         fi
-        brew install curl zsh unzip
+        brew install curl zsh unzip git
     elif [ "${OS}" == "linux" ]; then
         if [ -f /etc/alpine-release ]; then
             # Alpine Linux
-            sudo apk add --no-cache curl zsh unzip
+            sudo apk add --no-cache curl zsh unzip git
         else
-            # Assume Debian-based
+            # Assume Debian-based   
             sudo apt-get update
-            sudo apt-get install -y curl zsh unzip
+            sudo apt-get install -y curl zsh unzip git
         fi
     fi
 }
