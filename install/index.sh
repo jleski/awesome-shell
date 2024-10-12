@@ -73,8 +73,12 @@ install_common_brew_packages() {
 }
 
 install_oh_my_zsh() {
-    echo "Installing Oh-My-Zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        echo "Installing Oh-My-Zsh..."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    else
+        echo "Oh-My-Zsh is already installed. Skipping installation."
+    fi
 }
 
 fetch_dotfiles() {
