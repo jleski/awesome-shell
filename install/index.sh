@@ -170,7 +170,26 @@ install_minimal() {
         fi
         brew install azure-cli
     elif [ "${OS}" == "linux" ]; then
-        curl -sL https://aka.ms/InstallAzureCli | sudo bash
+            # Ensure Python3 is installed
+            if ! command -v python3 &> /dev/null; then
+                if [ -f /etc/alpine-release ]; then
+                    sudo apk add --no-cache python3
+                else
+                    sudo apt-get update && sudo apt-get install -y python3
+                fi
+            fi
+
+            # Install Azure CLI
+            if [ -f /etc/alpine-release ]; then
+                # Alpine-specific installation
+                sudo apk add --no-cache python3 python3-venv
+                sudo python3 -m venv /usr/local/azure-cli
+                sudo /usr/local/azure-cli/bin/python -m pip install --upgrade pip
+                sudo /usr/local/azure-cli/bin/python -m pip install azure-cli
+            else
+                # For Ubuntu and other distributions
+                curl -sL https://aka.ms/InstallAzureCli | sudo bash
+            fi
     fi
 
     # Fetch dotfiles
