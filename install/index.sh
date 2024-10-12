@@ -211,7 +211,6 @@ main() {
     install_prerequisites
 
     if [ "$MINIMAL_INSTALL" = true ]; then
-        echo "Performing minimal installation..."
         install_minimal
     else
         install_homebrew
