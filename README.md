@@ -12,21 +12,22 @@ This is a minimal install. It will install:
 
 ## Usage
 
-Use this one-liner to install:
+Use this one-liner to install (will prompt for sudo during the process):
 
 **Linux, MacOS**
 ```bash
 # wget
-wget -O - https://sh.jles.work | sudo bash
+wget -O - https://sh.jles.work | bash
 
 # curl
-sudo /bin/bash -c "$(curl -fsSL https://sh.jles.work)"
+/bin/bash -c "$(curl -fsSL https://sh.jles.work)"
 ```
 
 For minimal install:
 ```bash
 # wget
-wget -O - https://sh.jles.work | sudo MINIMAL_INSTALL=true bash
+wget -O - https://sh.jles.work | MINIMAL_INSTALL=true bash
+
 # curl
 MINIMAL_INSTALL=true /bin/bash -c "$(curl -fsSL https://sh.jles.work)"
 ```
