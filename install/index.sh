@@ -154,17 +154,23 @@ install_minimal() {
     install_oh_my_zsh
 
     # Install Starship
-    curl -sS https://starship.rs/install.sh | sh -s -- --yes
+    if ! command -v starship &> /dev/null; then
+        curl -sS https://starship.rs/install.sh | sh -s -- --yes
+    fi
 
     # Install lsd
-    LSD_FILENAME="lsd-${LSD_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-    curl -L "https://github.com/Peltoche/lsd/releases/download/${LSD_VERSION}/${LSD_FILENAME}" | tar xzf - -C /tmp
-    sudo mv /tmp/lsd-*/lsd /usr/local/bin/
+    if ! command -v lsd &> /dev/null; then
+        LSD_FILENAME="lsd-${LSD_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+        curl -L "https://github.com/Peltoche/lsd/releases/download/${LSD_VERSION}/${LSD_FILENAME}" | tar xzf - -C /tmp
+        sudo mv /tmp/lsd-*/lsd /usr/local/bin/
+    fi
 
     # Install fzf
-    FZF_FILENAME="fzf-${FZF_VERSION}-linux_amd64.tar.gz"
-    curl -L "https://github.com/junegunn/fzf/releases/download/${FZF_VERSION}/${FZF_FILENAME}" | tar xzf - -C /tmp
-    sudo mv /tmp/fzf /usr/local/bin/
+    if ! command -v fzf &> /dev/null; then
+        FZF_FILENAME="fzf-${FZF_VERSION}-linux_amd64.tar.gz"
+        curl -L "https://github.com/junegunn/fzf/releases/download/${FZF_VERSION}/${FZF_FILENAME}" | tar xzf - -C /tmp
+        sudo mv /tmp/fzf /usr/local/bin/
+    fi
 
     # Install Azure CLI
     if [ "${OS}" == "mac" ]; then
@@ -187,7 +193,9 @@ install_minimal() {
             if [ -f /etc/alpine-release ]; then
                 # Alpine-specific installation
                 sudo apk add --no-cache python3 py3-virtualenv
-                sudo python3 -m venv /usr/local/azure-cli
+                if [ ! -d /usr/local/azure-cli ]; then
+                    sudo python3 -m venv /usr/local/azure-cli
+                fi
                 sudo /usr/local/azure-cli/bin/python -m pip install --upgrade pip
                 sudo /usr/local/azure-cli/bin/python -m pip install azure-cli
             else
