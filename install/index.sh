@@ -192,7 +192,7 @@ install_minimal() {
             # Install Azure CLI
             if [ -f /etc/alpine-release ]; then
                 # Alpine-specific installation
-                sudo apk add --no-cache python3 py3-virtualenv
+                sudo apk add --no-cache python3 py3-virtualenv gcc libffi-dev openssl-dev make
                 if [ ! -d /usr/local/azure-cli ]; then
                     sudo python3 -m venv /usr/local/azure-cli
                 fi
